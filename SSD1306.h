@@ -94,26 +94,43 @@
     }
  * @endcode
  */
+
+ /*!
+ * @class       SSD1306
+ * @abstract    One of the best space interceptor.
+ * @discussion  The mythic spaceship used by the
+ *              Rebellion against the Empire.
+*/
 class SSD1306 {
 public:
-    /**
-     * PlotStyle. Defines how pixels being plotted interact with existing pixels on the screen
+    
+
+    /*!
+     * @enum        printMode
+     *              Select print mode
+     * @constant    Normal The point is set on the display
+     * @constant    Inverse The point is erased on the display
+     * @constant    Xor Erase pixel if it is on, otherwise set it on
      */
     enum printMode
     {
-        Normal,  /**< The point is set on the display */
-        Inverse, /**< The point is erased on the display */
-        Xor      /**< The point is erased on the display if it was already set, otherwise, it is set */
+        Normal, 
+        Inverse, 
+        Xor      
     };
     
-    /**
-     * speedMode. Defines the speed of the I2C bus
+    /*!
+     * @enum        speedMode
+     *              Select I2C bus speed
+     * @constant    Slow I2C frequency is set to 100 kHz
+     * @constant    Medium I2C frequency is set to 400 kHz
+     * @constant    Fast I2C frequency is set to 1 MHz. Use it only with short connections to host
      */
     enum speedMode
     {
-        Slow,    /**< I2C frequency is set to 100 kHz */
-        Medium,  /**< I2C frequency is set to 400 kHz */
-        Fast     /**< I2C frequency is set to 1 MHz. Use it only with short connections to host */
+        Slow,  
+        Medium, 
+        Fast     
     };
     
     /**
