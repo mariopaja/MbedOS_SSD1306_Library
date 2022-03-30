@@ -196,7 +196,6 @@ public:
     
     /**
      * Prints one pixel.
-     *
      * @param x x Coordinate (0-127) 
      * @param y y Coordinate (0-63)
      * @param mode Select print mode, otherwise Normal
@@ -206,9 +205,8 @@ public:
     
     /**
      * Returns pixel state
-     *
-     * @param x x-coordinate (0-127) of the pixel. X coordinates go left to right.
-     * @param y y-coordinate (0-63) of the pixel. Y coordinates go up to down.
+     * @param x Value (0-127)
+     * @param y Value (0-63)
      * @return true if the pixel was set, or false otherwise
      */
     bool getPixelState (char x, char y);
@@ -216,10 +214,10 @@ public:
     /**
      * Draw line using Bresenham Algorithm
      *
-     * @param xStart xStart (0-127)
-     * @param yStart yStart (0-63)
-     * @param xEnd xEnd (0-127)
-     * @param yEnd yEnd (0-63)
+     * @param xStart Value (0-127)
+     * @param yStart Value (0-63)
+     * @param xEnd Value (0-127)
+     * @param yEnd Value (0-63)
      * @param mode. Select print mode, otherwise Normal
      * @param refresh (Optional) Refresh Display
      */
