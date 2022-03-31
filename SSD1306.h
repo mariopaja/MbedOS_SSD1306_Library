@@ -237,33 +237,39 @@ public:
 	 * @param yStart Y Start Coordinate (0-63)
 	 * @param xEnd X End Coordinate (0-127)
 	 * @param yEnd Y End Coordinate (0-63)
-	 * @param mode. Select print mode, otherwise Normal
+	 * @param mode Select print mode, otherwise Normal
 	 * @param refresh (Optional) Refresh Display
 	 */
 	void drawLine(char xStart, char yStart, char xEnd, char yEnd, printMode mode = Normal, bool refresh = false);
 
 	/**
-	 * \brief Turn the whole display off.
-	 * \brief Reset display configuration
+	 * @brief Turn the whole display off.
+	 * @brief Reset display configuration
 	 */
 	void turnOff();
 
-	/** Turn the whole display on.  Used during initialisation. */
+	
+	/**
+	 * @brief Turn display off
+	 */
 	void turnOn();
 
 	/**
-	 * \brief Puts display on sleep
+	 * @brief Puts display on sleep
 	 */
 	void sleep();
 
+	/**
+	 * @brief Wake display up
+	 */
 	void wake();
 
 	/**
-	 * \brief 
-	 * \param c 
-	 * \param c_or_d 
-	 * \param lastitem 
-	 * \return 
+	 * @brief 
+	 * @param c 
+	 * @param c_or_d 
+	 * @param lastitem 
+	 * @return 
 	 */
 	int sendCommandData(char c, char c_or_d, char lastitem);
 	// Sends a command or data and signal if it is not the last command/data in a list
