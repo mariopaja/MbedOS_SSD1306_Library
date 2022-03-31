@@ -47,5 +47,3 @@ This code was tested ony on STM32 Nucleo-64 F446RE board
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please make sure to update tests as appropriate.
-
