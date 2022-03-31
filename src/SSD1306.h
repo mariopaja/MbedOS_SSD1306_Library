@@ -252,4 +252,4 @@ protected:
 	int sendData(char d); // Sends I2C data to SSD1306  
 };
 
-#endif SSD1306_H
+#endif
