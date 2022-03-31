@@ -12,7 +12,7 @@ Import Library... -> Git or os.mbed.com URL
 
 ## Implementation Example
 
-D14 -> SDA pin
+D14 -> SDA pin<br/>
 D15 -> SCL pin
 
 ```C++
