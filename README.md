@@ -1,6 +1,6 @@
-# Foobar
+# SSD1306 Library
 
-Foobar is a Python library for dealing with word pluralization.
+SSD1306 Library is a MbedOS library used for the SSD1306 OLED display (128x64)
 
 ## Installation
 
@@ -30,5 +30,3 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update tests as appropriate.
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
