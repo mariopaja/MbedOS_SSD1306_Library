@@ -12,6 +12,9 @@ Import Library... -> Git or os.mbed.com URL
 
 ## Implementation Example
 
+D14 -> SDA pin
+D15 -> SCL pin
+
 ```C++
 #include "mbed.h"
 #include "SSD1306.h"
