@@ -232,7 +232,7 @@ public:
 	 */
 	bool getPixelState(char x, char y);
 
-	/**
+	/*!
 	 * @brief Draw line using Bresenham Algorithm
 	 *
 	 * @param xStart X Start Coordinate (0-127)
