@@ -6,8 +6,8 @@
 *
 */
 
-#ifndef MBED_SSD1306_LIBRARY
-#define MBED_SSD1306_LIBRARY
+#ifndef MBEDOS_SSD1306_LIBRARY
+#define MBEDOS_SSD1306_LIBRARY
 
 #include "mbed.h"
 
