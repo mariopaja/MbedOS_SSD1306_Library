@@ -17,9 +17,7 @@ Import Library... -> Git or os.mbed.com URL
 #include "SSD1306.h"
 
 
-SSD1306 display (D14, D15);
-DigitalIn btn(BUTTON1);
-
+SSD1306 display(D14, D15);
 
 int main(){
     display.setSpeed(SSD1306::Medium);  
@@ -28,15 +26,15 @@ int main(){
     display.clearScreen(); 
 
     display.setCursor(0,2);             
-    display.printf ("Hello World!"); 
+    display.printf("Hello World!"); 
     display.drawLine(5, 8, 15, 25);
         
     display.refreshDisplay();
 
-    unsigned char level = 255;  
+    unsigned char level=255;  
     display.setBrightness(level);
 
-    while (true) {
+    while(true){
         wait_us (20000);
     }
 
