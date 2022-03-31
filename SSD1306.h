@@ -202,7 +202,7 @@ public:
 	/**
 	 * Set display brightness
 	 *
-	 * @param brightnessLevel Expected integer value (0-255)
+	 * @param[in] brightnessLevel Expected integer value (0-255)
 	 */
 	void setBrightness(char brightnessLevel);
 
