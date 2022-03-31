@@ -6,8 +6,8 @@
 *
 */
 
-#ifndef MBEDOS_SSD1306_LIBRARY
-#define MBEDOS_SSD1306_LIBRARY
+#ifndef SSD1306_H
+#define SSD1306_H
 
 #include "mbed.h"
 
@@ -94,21 +94,19 @@
  * @endcode
  */
 
- /*!
- * @class       SSD1306
- * @abstract    One of the best space interceptor.
- * @discussion  The mythic spaceship used by the
- *              Rebellion against the Empire.
+ /**
+ * SSD1306
+ *
  */
 class SSD1306
 {
 public:
-	/*!
-	 * @enum        printMode
-	 *              Select print mode
-	 * @constant    Normal The point is set on the display
-	 * @constant    Inverse The point is erased on the display
-	 * @constant    Xor Erase pixel if it is on, otherwise set it on
+	/**
+	 * Select print mode of the display
+	 *
+	 * @param   Normal		The point is set on the display
+	 * @param   Inverse	The point is erased on the display
+	 * @param   Xor		Erase pixel if it is on, otherwise set it on
 	 */
 	enum printMode
 	{
@@ -121,7 +119,7 @@ public:
 
 
 	/**
-	 * @brief Select I2C bus speed
+	 * Select I2C bus speed
 	 *
 	 * @param Slow I2C frequency is set to 100 kHz
 	 * @param Medium I2C frequency is set to 400 kHz
@@ -135,10 +133,11 @@ public:
 	};
 
 	/**
-	 * @brief Creates an instance of a SSD1306 specifying I2C pins to use
+	 * Create an instance of a SSD1306 specifying I2C pins to use
 	 *
-	 * @param SDA I2C SDA data line pin
-	 * @param SCL I2C SCL clock line pin
+	 * @param SDA SDA pin
+	 * @param SCL SCL pin
+	 * @param displayAddress I2C Address of the display
 	 */
 	SSD1306(PinName SDA, PinName SCL, char displayAddress = 0x78);
 
@@ -151,42 +150,43 @@ public:
 	SSD1306(I2C& busI2C, char displayAddress = 0x78);
 
 	/**
-	 * @brief Set the frequency of the I2C interface
+	 * Set the frequency of the I2C interface
 	 *
 	 * @param speedHz The bus frequency in hertz
 	 */
 	void setSpeed(speedMode speedHz);
 
 	/**
-	 * @brief Initialize the SSD1306 display
+	 * Initialize the SSD1306 display
 	 */
 	int init(void);
 
 	/**
-	 * @brief Scroll up, one text line
+	 * Scroll up, one text line
 	 *
 	 * @param refresh (Optional) Refresh Display
 	 */
 	void scroll(bool refresh = false);
 
 	/**
-	 * @brief Print a character
+	 * Print a character
 	 *
-	 * @param _char ASCII code of the character to print. For more info visit https://www.ascii-codes.com/
+	 * @param _char ASCII code of the character to print. 
 	 * @param refresh (Optional) Refresh Display
+	 * @see For more info visit https://www.ascii-codes.com/
 	 */
 	void printChar(char _char, bool refresh = false);
 
 
 	/**
-	 * @brief Print constant pointer string
+	 * Print constant pointer string
 	 *
 	 * @param fmt constant pointer string
 	 */
 	void printf(const char* fmt, ...);
 
 	/**
-	 * @brief Set printing cursor
+	 * Set printing cursor
 	 *
 	 * @param row Expected integer value (0-7)
 	 * @param column Expected integer value (0-15)
@@ -194,26 +194,26 @@ public:
 	void setCursor(char row, char column);
 
 	/**
-	 * @brief Refresh display.
-	 * @brief Send data from memory to display
+	 * Refresh display.
+	 * Send data from memory to display
 	 */
 	void refreshDisplay(void);
 
 	/**
-	 * @brief Set display brightness
+	 * Set display brightness
 	 *
 	 * @param brightnessLevel Expected integer value (0-255)
 	 */
 	void setBrightness(char brightnessLevel);
 
 	/**
-	 * @brief Clear screen from all text
-	 * @brief Resets cursor to (0,0)
+	 * Clear screen from all text
+	 * Resets cursor to (0,0)
 	 */
 	void clearScreen();
 
 	/**
-	 * @brief Prints one pixel.
+	 * Print one pixel.
 	 *
 	 * @param x	X Coordinate (0-127)
 	 * @param y	Y Coordinate (0-63)
@@ -223,7 +223,7 @@ public:
 	void printPixel(char x, char y, printMode mode = Normal, bool refresh = false);
 
 	/*!
-	 * \brief Returns pixel state
+	 * Return pixel state
 	 *
 	 * \param x X Coordinate (0-127)
 	 * \param y Y Coordinate (0-63)
@@ -231,8 +231,8 @@ public:
 	 */
 	bool getPixelState(char x, char y);
 
-	/*!
-	 * @brief Draw line using Bresenham Algorithm
+	/**
+	 * Draw line using Bresenham Algorithm
 	 *
 	 * @param xStart X Start Coordinate (0-127)
 	 * @param yStart Y Start Coordinate (0-63)
@@ -244,29 +244,29 @@ public:
 	void drawLine(char xStart, char yStart, char xEnd, char yEnd, printMode mode = Normal, bool refresh = false);
 
 	/**
-	 * @brief Turn the whole display off.
-	 * @brief Reset display configuration
+	 * Turn the whole display off.
+	 * Reset display configuration
 	 */
 	void turnOff();
 
 
 	/**
-	 * @brief Turn display off
+	 * Turn display off
 	 */
 	void turnOn();
 
 	/**
-	 * @brief Puts display on sleep
+	 * Puts display on sleep
 	 */
 	void sleep();
 
 	/**
-	 * @brief Wake display up
+	 * Wake display up
 	 */
 	void wake();
 
 	/**
-	 * @brief
+	 * Send commands to the display
 	 * @param c
 	 * @param c_or_d
 	 * @param lastitem
@@ -284,7 +284,7 @@ public:
 
 private:
 	/**
-	 * @brief Print C string
+	 * Print C string
 	 *
 	 * @param String C string
 	 * @param refresh (Optional) Refresh Display
@@ -301,4 +301,4 @@ protected:
 	int sendData(char d); // Sends I2C data to SSD1306  
 };
 
-#endif
+#endif SSD1306_H
