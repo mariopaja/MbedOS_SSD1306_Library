@@ -66,10 +66,10 @@
  *  Code was tested on a Nucleo-64 F446RE board
  *
  * Example of use:
- * @code 
+ * @code
 	#include "mbed.h"
 	#include "SSD1306.h"
-	
+
 	SSD1306 display (D14, D15);
 
 	int main()
@@ -94,13 +94,12 @@
  * @endcode
  */
 
-/*!
- *@
-* @class       SSD1306
-* @abstract    One of the best space interceptor.
-* @discussion  The mythic spaceship used by the
-*              Rebellion against the Empire.
-*/
+ /*!
+ * @class       SSD1306
+ * @abstract    One of the best space interceptor.
+ * @discussion  The mythic spaceship used by the
+ *              Rebellion against the Empire.
+ */
 class SSD1306
 {
 public:
@@ -113,12 +112,12 @@ public:
 	 */
 	enum printMode
 	{
-		Normal,
-		Inverse,
-		Xor
+		Normal,		/*!< Pixels are set on >*/
+		Inverse,	/*!< Pixels are set off >*/
+		Xor			/*!< Erase pixel if it is on, otherwise set it on >*/
 	};
 
-	
+
 
 
 	/**
@@ -223,7 +222,7 @@ public:
 	 */
 	void printPixel(char x, char y, printMode mode = Normal, bool refresh = false);
 
-	/**
+	/*!
 	 * \brief Returns pixel state
 	 *
 	 * \param x X Coordinate (0-127)
@@ -250,7 +249,7 @@ public:
 	 */
 	void turnOff();
 
-	
+
 	/**
 	 * @brief Turn display off
 	 */
@@ -267,11 +266,11 @@ public:
 	void wake();
 
 	/**
-	 * @brief 
-	 * @param c 
-	 * @param c_or_d 
-	 * @param lastitem 
-	 * @return 
+	 * @brief
+	 * @param c
+	 * @param c_or_d
+	 * @param lastitem
+	 * @return
 	 */
 	int sendCommandData(char c, char c_or_d, char lastitem);
 	// Sends a command or data and signal if it is not the last command/data in a list
