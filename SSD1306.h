@@ -66,7 +66,7 @@
  *  Code was tested on a Nucleo-64 F446RE board
  *
  * Example of use:
- * @code
+ * @code 
 	#include "mbed.h"
 	#include "SSD1306.h"
 	
@@ -95,6 +95,7 @@
  */
 
 /*!
+ *@
 * @class       SSD1306
 * @abstract    One of the best space interceptor.
 * @discussion  The mythic spaceship used by the
@@ -121,10 +122,11 @@ public:
 
 
 	/**
-	 * \brief Select I2C bus speed
-	 * \param Slow I2C frequency is set to 100 kHz
-	 * \param Medium I2C frequency is set to 400 kHz
-	 * \param Fast I2C frequency is set to 1 MHz. Use it only with short connections to host
+	 * @brief Select I2C bus speed
+	 *
+	 * @param Slow I2C frequency is set to 100 kHz
+	 * @param Medium I2C frequency is set to 400 kHz
+	 * @param Fast I2C frequency is set to 1 MHz. Use it only with short connections to host
 	 */
 	enum speedMode
 	{
@@ -134,10 +136,10 @@ public:
 	};
 
 	/**
-	 * \brief Creates an instance of a SSD1306 specifying I2C pins to use
+	 * @brief Creates an instance of a SSD1306 specifying I2C pins to use
 	 *
-	 * \param SDA I2C data line pin
-	 * \param SCL I2C clock line pin
+	 * @param SDA I2C SDA data line pin
+	 * @param SCL I2C SCL clock line pin
 	 */
 	SSD1306(PinName SDA, PinName SCL, char displayAddress = 0x78);
 
@@ -145,79 +147,79 @@ public:
 	 * Create an instance of a SSD1306
 	 *
 	 * @param busI2C I2C object
-	 * @param displayAddress I2C addr of SSD1306 controller
+	 * @param displayAddress I2C Address of the display
 	 */
 	SSD1306(I2C& busI2C, char displayAddress = 0x78);
 
 	/**
-	 * \brief Set the frequency of the I2C interface
+	 * @brief Set the frequency of the I2C interface
 	 *
-	 * \param speedHz The bus frequency in hertz
+	 * @param speedHz The bus frequency in hertz
 	 */
 	void setSpeed(speedMode speedHz);
 
 	/**
-	 * \brief Initialize the SSD1306 display
+	 * @brief Initialize the SSD1306 display
 	 */
 	int init(void);
 
 	/**
-	 * \brief Scroll up, one text line
+	 * @brief Scroll up, one text line
 	 *
-	 * \param refresh (Optional) Refresh Display
+	 * @param refresh (Optional) Refresh Display
 	 */
 	void scroll(bool refresh = false);
 
 	/**
-	 * \brief Print a character
+	 * @brief Print a character
 	 *
-	 * \param _char ASCII code of the character to print. For more info visit https://www.ascii-codes.com/
-	 * \param refresh (Optional) Refresh Display
+	 * @param _char ASCII code of the character to print. For more info visit https://www.ascii-codes.com/
+	 * @param refresh (Optional) Refresh Display
 	 */
 	void printChar(char _char, bool refresh = false);
 
 
 	/**
-	 * \brief Print constant pointer string
+	 * @brief Print constant pointer string
 	 *
-	 * \param fmt constant pointer string
+	 * @param fmt constant pointer string
 	 */
 	void printf(const char* fmt, ...);
 
 	/**
-	 * \brief Set printing cursor
+	 * @brief Set printing cursor
 	 *
-	 * \param row Expected integer value (0-7)
-	 * \param column Expected integer value (0-15)
+	 * @param row Expected integer value (0-7)
+	 * @param column Expected integer value (0-15)
 	 */
 	void setCursor(char row, char column);
 
 	/**
-	 * \brief Refresh display.
-	 * \brief Send data from memory to display
+	 * @brief Refresh display.
+	 * @brief Send data from memory to display
 	 */
 	void refreshDisplay(void);
 
 	/**
-	 * \brief Set display brightness
+	 * @brief Set display brightness
 	 *
-	 * \param brightnessLevel Expected integer value (0-255)
+	 * @param brightnessLevel Expected integer value (0-255)
 	 */
 	void setBrightness(char brightnessLevel);
 
 	/**
-	 * \brief Clear screen from all text
-	 * \brief Resets cursor to (0,0)
+	 * @brief Clear screen from all text
+	 * @brief Resets cursor to (0,0)
 	 */
 	void clearScreen();
 
 	/**
-	 * \brief Prints one pixel.
+	 * @brief Prints one pixel.
 	 *
-	 * \param x			X Coordinate (0-127)
-	 * \param y			Y Coordinate (0-63)
-	 * \param mode		Select print mode, otherwise Normal
-	 * \param refresh	(Optional) Refresh Display
+	 * @param x	X Coordinate (0-127)
+	 * @param y	Y Coordinate (0-63)
+	 * @param mode Select print mode, otherwise Normal
+	 * @param refresh (Optional) Refresh Display
 	 */
 	void printPixel(char x, char y, printMode mode = Normal, bool refresh = false);
 
@@ -283,7 +285,7 @@ public:
 
 private:
 	/**
-	 * Print C string
+	 * @brief Print C string
 	 *
 	 * @param String C string
 	 * @param refresh (Optional) Refresh Display
