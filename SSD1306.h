@@ -231,20 +231,20 @@ public:
 	bool getPixelState(char x, char y);
 
 	/**
-	 * Draw line using Bresenham Algorithm
+	 * @brief Draw line using Bresenham Algorithm
 	 *
-	 * @param xStart Value (0-127)
-	 * @param yStart Value (0-63)
-	 * @param xEnd Value (0-127)
-	 * @param yEnd Value (0-63)
+	 * @param xStart X Start Coordinate (0-127)
+	 * @param yStart Y Start Coordinate (0-63)
+	 * @param xEnd X End Coordinate (0-127)
+	 * @param yEnd Y End Coordinate (0-63)
 	 * @param mode. Select print mode, otherwise Normal
 	 * @param refresh (Optional) Refresh Display
 	 */
 	void drawLine(char xStart, char yStart, char xEnd, char yEnd, printMode mode = Normal, bool refresh = false);
 
 	/**
-	 * Turn the whole display off.
-	 * Reset display configuration
+	 * \brief Turn the whole display off.
+	 * \brief Reset display configuration
 	 */
 	void turnOff();
 
