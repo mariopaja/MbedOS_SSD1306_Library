@@ -9,6 +9,7 @@
 #include "SSD1306.h"
 #include "mbed.h"
 #include "Font.h"
+#include "commands.h"
 
 
 SSD1306::SSD1306(PinName sda, PinName scl, char displayAddress) {
