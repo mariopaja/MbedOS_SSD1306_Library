@@ -1,6 +1,8 @@
 # SSD1306 Library
 
 SSD1306 Library is a MbedOS library used for the SSD1306 OLED display (128x64)
+Library contains functions only to print characters and lines.
+Library is stripped out of any graphics or images.
 
 ## Installation
 
